@@ -1,0 +1,169 @@
+/*
+File: style.css
+GUI Assignment: Create a scrabble game with the use of your own algorithma and jQuert drag and drop
+Daury Argueta, UMass Lowell Computer Science, daury_argueta@student.uml.edu 
+
+Purpose:
+The purposes of this assignment are to give me additional experience
+ working with the jQuery UI and to pull together much of what we have learn and
+ done this semester. I had to implement a bit of the game of Scrabble using
+ drag-and-drop. This drag-and-drop method allows the elements to be dropped with 
+ the help of mouse. Using jQuery UI, we can make the DOM(Document Object Model) 
+ elements to drop anywhere within the view port on the specified target. The idea 
+ is to display one line of a scrabble board to the user along with seven letter tiles on
+ a tile rack.
+
+ contination of purpose of assignment: I had to figure out a algorithm to 
+ indentiy which letter tile was dragged to which block and had to 
+ implement the algorithm to tall the score of the users word after indicates that all the tiles
+ in the word have been completely played.
+
+Copyright (c) 2021 by Daury. All rights reserved. May be freely copied or excerpted for educational 
+purposes with credit to the author.
+
+Updated by Daury on June 29, 2022 at 11:00 PM
+  src: Sources linked are commented in the code showing where I used what.
+*/
+
+/*
+Added a font for my title
+*/
+#h2 {
+  font-family: fantasy;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+/*
+How i was able to style every little box where my tile, aka my word would be at
+*/
+.letterTile {
+  background-color: blue;
+  height: 82px;
+  width: 75px;
+  display: inline-block;
+}
+
+/*
+The styling where I had a container to keep in all my tile letters
+*/
+.tileLetterContainer {
+  height: 136px;
+  width: 551px;
+  margin: auto;
+  padding-top: 60px;
+  /* background-color: azure; */
+}
+
+/*
+I was not use how to implement the tiles through JS. I tried, I asked for help,
+but I had no luck receving the help. I hardcore some of the tiles to show and atleast
+get partial credit that I did get down the drag jquery UI.
+*/
+#tile1 {
+  background-color: aquamarine;
+  background-image: url("../graphics_data/Scrabble_Tiles/Scrabble_Tile_A.jpg");
+  background-size: contain;
+}
+
+#tile2 {
+  background-color: aquamarine;
+  background-image: url("../graphics_data/Scrabble_Tiles/Scrabble_Tile_E.jpg");
+  background-size: contain;
+}
+
+#tile3 {
+  background-color: aquamarine;
+  background-image: url("../graphics_data/Scrabble_Tiles/Scrabble_Tile_Z.jpg");
+  background-size: contain;
+}
+#tile4 {
+  background-color: aquamarine;
+  background-image: url("../graphics_data/Scrabble_Tiles/Scrabble_Tile_P.jpg");
+  background-size: contain;
+}
+#tile5 {
+  background-color: aquamarine;
+  background-image: url("../graphics_data/Scrabble_Tiles/Scrabble_Tile_S.jpg");
+  background-size: contain;
+}
+
+#tile6 {
+  background-color: aquamarine;
+  background-image: url("../graphics_data/Scrabble_Tiles/Scrabble_Tile_I.jpg");
+  background-size: contain;
+}
+
+#tile7 {
+  background-color: aquamarine;
+  background-image: url("../graphics_data/Scrabble_Tiles/Scrabble_Tile_O.jpg");
+  background-size: contain;
+}
+#theTileRack {
+  background-image: url("../graphics_data/scrabble-tile-holder-406774_640.png");
+  margin: auto;
+  height: 250px;
+  background-repeat: no-repeat;
+  width: 650px;
+  margin-top: 10px;
+  justify-content: center;
+}
+
+/* I used this inorder to style my scabble board. */
+#lettersBox {
+  background-image: url("../graphics_data/DauryScrabbleBoard.jpg");
+  border-style: double 2px;
+  background-repeat: no-repeat;
+  width: 735px;
+  height: 86px;
+  margin: auto;
+  background-color: blueviolet;
+}
+
+/*This was the styling where the places/spots are where I will drag the letter
+into the scrabble board */
+#letterPlace1,
+#letterPlace2,
+#letterPlace3,
+#letterPlace4,
+#letterPlace5,
+#letterPlace6,
+#letterPlace7,
+#letterPlace8,
+#letterPlace9 {
+  margin-left: 0px;
+  margin-right: 3px;
+  margin-top: 4px;
+  margin-bottom: 10px;
+  height: 82px;
+  width: 75px;
+  display: inline-block;
+  /* use this to see the placements where i could drag the tiles */
+  /* background-color: brown; */
+}
+
+/*
+ Here I did the styling where my scores had to go, here is here the button to 
+ submit the word, restart a new game and new letters were suppose to go
+ */
+.scoreBoard {
+  border-style: dashed;
+  border-color: blue;
+  display: block;
+  text-align: center;
+  height: 260px;
+  background-color: rgb(42, 234, 248);
+  padding-bottom: 50px;
+  width: 600px;
+  margin: auto;
+  margin-top: 90px;
+  position: relative;
+}
+
+/*
+I added a background image inorder to make my webpage look better. not too simple
+*/
+body {
+  background-color: rgb(175, 11, 175);
+  background-image: url("../graphics_data/scrabbleBackground.jpeg");
+}

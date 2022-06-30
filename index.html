@@ -1,0 +1,108 @@
+<!--
+File: DAMultipJS.js
+GUI Assignment: Create a scrabble game with the use of your own algorithma and jQuert drag and drop
+Daury Argueta, UMass Lowell Computer Science, daury_argueta@student.uml.edu 
+
+Purpose:
+The purposes of this assignment are to give me additional experience
+ working with the jQuery UI and to pull together much of what we have learn and
+ done this semester. I had to implement a bit of the game of Scrabble using
+ drag-and-drop. This drag-and-drop method allows the elements to be dropped with 
+ the help of mouse. Using jQuery UI, we can make the DOM(Document Object Model) 
+ elements to drop anywhere within the view port on the specified target. The idea 
+ is to display one line of a scrabble board to the user along with seven letter tiles on
+ a tile rack.
+
+ contination of purpose of assignment: I had to figure out a algorithm to 
+ indentiy which letter tile was dragged to which block and had to 
+ implement the algorithm to tall the score of the users word after indicates that all the tiles
+ in the word have been completely played.
+
+Copyright (c) 2021 by Daury. All rights reserved. May be freely copied or excerpted for educational 
+purposes with credit to the author.
+
+Updated by Daury on June 29, 2022 at 11:00 PM
+  src: Sources linked are commented in the code showing where I used what.
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Daurys Scrabble Game</title>
+    <!--
+        Here are my links with jquery and for css
+    -->
+    <link
+      rel="stylesheet"
+      href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css"
+    />
+    <link rel="stylesheet" href="style/style.css" />
+  </head>
+  <body>
+    <!-- 
+        I made a container, where this container would have all the tile positions in the tile rack.
+        I knew i would need this in my css and my js inorder to have a place for it in my tile rack
+      -->
+    <div id="theTileRack" class="theTileRack">
+      <div class="tileLetterContainer">
+        <div class="letterTile" id="tile1" slot="1"></div>
+        <div class="letterTile" id="tile2" slot="2"></div>
+        <div class="letterTile" id="tile3" slot="3"></div>
+        <div class="letterTile" id="tile4" slot="4"></div>
+        <div class="letterTile" id="tile5" slot="5"></div>
+        <div class="letterTile" id="tile6" slot="6"></div>
+        <div class="letterTile" id="tile7" slot="7"></div>
+      </div>
+    </div>
+    <!-- 
+        I made a container, where this container would have all the tile positions in the scrabbleboard.
+        I knew i would need this in my css and my js inorder to place the tiles from the rack into them
+      -->
+    <div id="lettersBox">
+      <div id="scrabbleBoard" class="scrabbleBoard"></div>
+      <!-- 
+        I made this to have a understanding of of where which spot would be corresponding to my scrabble
+        board where the tile can be placed
+      -->
+      <div id="box">
+        <div id="letterPlace1" class="letterPlace ui-droppable" col="1"></div>
+        <div id="letterPlace2" class="letterPlace ui-droppable" col="2"></div>
+        <div id="letterPlace3" class="letterPlace ui-droppable" col="3"></div>
+        <div id="letterPlace4" class="letterPlace ui-droppable" col="4"></div>
+        <div id="letterPlace5" class="letterPlace ui-droppable" col="5"></div>
+        <div id="letterPlace6" class="letterPlace ui-droppable" col="6"></div>
+        <div id="letterPlace7" class="letterPlace ui-droppable" col="7"></div>
+        <div id="letterPlace8" class="letterPlace ui-droppable" col="8"></div>
+        <div id="letterPlace9" class="letterPlace ui-droppable" col="9"></div>
+      </div>
+    </div>
+    <!-- This container holds the score of the word, total score and buttons if they want a new set
+        of letters, or want to restart the game.
+      -->
+    <div class="scoreBoard" id="scoreBoard">
+      <h2 id="h2">Daury's Scrabble game!</h2>
+      <h3 id="h3">Your total Score is:</h3>
+      <h4 id="h4">Word Score is:</h4>
+      <h5 id="h5">Amount of tiles remaining: 93</h5>
+      <!-- This container holds the score of the word, total score and buttons if they want a new set
+        of letters, or want to restart the game.
+      -->
+      <button type="button" id="newHandButton" onclick="nextWord()">
+        Submit Word
+      </button>
+      <button type="button" id="resetButton" onclick="newGame()">
+        Restart Game
+      </button>
+      <button type="button" id="newLetters" onclick="newTiles()">
+        New Letters
+      </button>
+    </div>
+  </body>
+  <!-- 
+      Here is my links with my js 
+    -->
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+  <script src="JsCode/scrabbleJsCode.js"></script>
+</html>
